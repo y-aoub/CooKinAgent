@@ -1,24 +1,27 @@
-import os
-import pathlib
-from dotenv import load_dotenv, find_dotenv
 import subprocess
-import logging
+import os
 
-DATA_DIR_PATH = pathlib.Path(__file__).parent
-RECIPES_FILE_PATH = DATA_DIR_PATH / "recipes.csv"
-INTERACTIONS_FILE_PATH = DATA_DIR_PATH / "interactions.csv"
+def is_chroma_exist(chroma_data_path):
+    chroma_dir_exist = os.path.isdir(chroma_data_path)
+    return chroma_dir_exist
 
-dotenv_path = find_dotenv()
-load_dotenv(dotenv_path)
+def is_raw_data_exist(recipes_data_path, interactions_data_path):
+    recipes_file_exist = os.path.isfile(recipes_data_path)
+    interactions_file_exist = os.path.isfile(interactions_data_path)
+    raw_data_files_exist = (recipes_file_exist and interactions_file_exist)
+    return raw_data_files_exist
 
-recipes_data_id = os.getenv("RECIPES_DATA_ID")
-interactions_data_id = os.getenv("INTERACTIONS_DATA_ID")
-
-def gdown_data(recipes_data_id, interactions_data_id, recipes_file_path=RECIPES_FILE_PATH, interactions_file_path=INTERACTIONS_FILE_PATH):
-    logging.info("Downloading recipes.csv")
-    subprocess.run(["gdown", recipes_data_id, "-O", recipes_file_path])
-    logging.info("Downloading interactions.csv")
-    subprocess.run(["gdown", interactions_data_id, "-O", interactions_file_path])
+def gdown_raw_data(
+    recipes_data_id, interactions_data_id, recipes_data_path, interactions_data_path
+):
+    raw_data_files_exist = is_raw_data_exist(recipes_data_path=recipes_data_path, interactions_data_path=interactions_data_path)
     
-if __name__ == "__main__":
-    gdown_data(recipes_data_id=recipes_data_id, interactions_data_id=interactions_data_id)
+    if not raw_data_files_exist:
+        subprocess.run(["gdown", recipes_data_id, "-O", recipes_data_path])
+        subprocess.run(["gdown", interactions_data_id, "-O", interactions_data_path])
+    
+def gdow_chroma(chroma_data_path, chroma_data_id):
+    chroma_dir_exist = is_chroma_exist(chroma_data_path=chroma_data_path)
+    
+    if not chroma_dir_exist:
+        subprocess.run(["gdown", chroma_data_id, "-O", chroma_data_path, "--folder"])
