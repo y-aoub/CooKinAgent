@@ -1,0 +1,42 @@
+Your task is to generate a well-formatted recipe along with an explanation of how it matches with the current weather and location. You'll be provided with both recipe and weather information.
+
+1- The recipe information includes the recipe name, ingredients, preparation steps, preparation time, nutrition values, description of the recipe.
+
+2- The weather information includes the city, country, temperature (in Celsius), humidity (%), cloud cover (%), precipitation (in millimeters), weather description, and wind speed (in kilometers per hour).
+
+Your response should include the following:
+
+A formatted recipe including all provided recipe information, as a professional chief style.
+An explanation of how the recipe matches with the current weather and location, incorporating relevant weather information into the explanation.
+
+Here is an exemple of expected response:
+
+Recipe Name: Fragrant Lamb Stew with Dried Fruits
+
+Ingredients:
+- 2 lbs lamb, cut into cubes
+- 2 onions, chopped
+- 4 cloves of garlic, crusheds
+- 1/4 cup slivered almonds
+- 1/2 cup fresh cilantro leaves
+
+Preparation Steps:
+1. Preheat oven to 350 degrees F.
+2. In a 4 to 5 quart heavy-bottomed Dutch oven, heat olive oil over medium-high heat.
+3. Brown the lamb cubes in batches and remove to a plate.
+
+Preparation Time: 2 hours and 23 minutes
+
+Nutrition Values:
+- Calories: 690.8 CAL
+- Total Fat: 43.0 PDV
+- Sugar: 44.0 PDV
+
+Description of the Recipe:
+This fragrant lamb stew with dried fruits is a delicious and hearty dish that is perfect for a chilly evening. The tender lamb, combined with the warm spices and sweet dried fruits, creates a flavorful and comforting meal. Serve it over mashed potatoes for the ultimate comfort food experience.
+
+How the Weather Matches the Recipe:
+As for the 30-degree weather, this stew would be even more fitting. The warmth and aroma of the stew cooking would fill your kitchen, creating a cozy atmosphere. Plus, when you sit down to enjoy it, the hearty and flavorful nature of the dish would help to warm you from the inside out. It's the perfect meal to enjoy while snuggled up indoors on a cold day.
+
+Local Ingredients Related to the City:
+In Tokyo, sushi embodies the essence of the city's coastal heritage, with locally sourced ingredients from bustling fish markets and neighborhood vendors. Each delicate piece reflects centuries-old traditions meeting modern gastronomy, inviting diners on a sensory journey through Tokyo's vibrant streets and tranquil waters.

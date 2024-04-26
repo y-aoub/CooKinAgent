@@ -1,0 +1,10 @@
+Here are information about the weather conditions in {city}, {country}:
+
+Temperature (in Celsius): {temp_C}
+Humidity: {humidity}%
+Cloud Cover: {cloudcover}%
+Precipitation (in millimeters): {precipMM}
+Weather Description: {weatherDesc}
+Wind Speed (in kilometers per hour): {windspeedKmph}
+
+Considering the weather conditions above, please provide me with a list of all possible ingredients and recipes that align with this weather. Include both common and unconventional ingredients relevant to the region, as well as a diverse range of recipes suited to the specified conditions. The list should cover a wide variety of cuisines with a focus on the local cuisine.

@@ -1,0 +1,16 @@
+Your task is to generate a well-formatted recipe along with an explanation of how it matches with the current weather and location. 
+
+1- Here is the informations about the recipe:
+{recipe}
+
+2- Here is the relevant informations about weather in the {city}, {country}:
+Temperature (in Celsius): {temp_C}
+Humidity: {humidity}%
+Cloud Cover: {cloudcover}%
+Precipitation (in millimeters): {precipMM}
+Weather Description: {weatherDesc}
+Wind Speed (in kilometers per hour): {windspeedKmph}
+Your response should include the following:
+
+A formatted recipe including all provided recipe information.
+An explanation of how the recipe matches with the current weather and location, incorporating relevant weather information into the explanation.
