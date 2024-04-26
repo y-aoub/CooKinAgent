@@ -1,0 +1,45 @@
+<style>
+.title {
+    color: #0066cc;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px; /* Adjusted margin */
+}
+.btn {
+    background-color: #ff4081;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #ff6f9e;
+    cursor: pointer;
+}
+.warning-text {
+    color: #ff3300;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 20px;
+}
+.agent-description {
+    font-size: 18px;
+    margin-top: 0px; /* Adjusted margin */
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+}
+.input-label {
+    font-size: 24px;
+    margin-bottom: 5px; /* Adjusted margin */
+    margin-top: 5px; /* Adjusted margin */
+    font-family: 'Roboto', sans-serif;
+}
+</style>
