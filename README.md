@@ -1,24 +1,55 @@
-# Data Processing
+## Overview
+CooKinAgent is a project that retrieves recipes adapted to the current weather in a specified city.
 
-- [x] Get the data from : [Food.com Recipes and User Interactions Dataset](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions?resource=download&select=RAW_recipes.csv)
-- [x] Set a script to download data (with dynamic paths)
-- [x] Add reviews to the data (could be a good asset) for our RAG
-- [x] Get rid of unuseful columns
-- [x] Remove rows with missing names
-- [x] Format the data:
-	- [x] Format time in a human-readable format
-	- [x] Extract entities relative to countries and regions from tags
-	- [x] Format steps
-	- [x] Format ingredients
-	- [x] Format nutrition
-	- [x] Format reviews
-	- [x] Compute and add a mean rating for each row
-- [ ] Format the data into documents (1 row = 1 document, and name as source)
-- [ ] Splitting data into documents
-- [ ] Perform embedding
-- [ ] Storing in ChromaDB data as vectors
+## Data
+The raw data used here comes from the following links:
 
-# API Calls
+- [RAW_recipes.csv](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions/data?select=RAW_recipes.csv)
+- [RAW_interactions.csv](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions/data?select=RAW_interactions.csv)
 
-- [ ] Test API calls OpenAI
-- [ ] Test API calls (see doc: [wttr.in GitHub](https://github.com/chubin/wttr.in))
+## Setup
+
+### Creating a Virtual Environment
+Create a virtual environment to isolate package dependencies. Use one of the following methods:
+
+- Using Python's built-in venv module:
+  ```
+  python -m venv [environment_path]
+  ```
+  
+- Using the virtualenv package:
+  ```
+  virtualenv [environment_path]
+  ```
+
+### Activating the Environment
+Activate the virtual environment by running:
+```
+source [environment_path]/bin/activate
+```
+
+### Installing Dependencies
+Install the required Python packages using:
+```
+pip install -r requirements.txt
+```
+
+## Project Structure
+CooKinAgent consists of two main scripts located within the CooKinAgent folder:
+- `main.py` 
+- `app.py` – This is the Streamlit application.
+
+To run the Streamlit app:
+```
+streamlit run app.py [--build_chroma]
+```
+By default, `--build_chroma` is set to `False`, meaning that the vectorstore data will not be built from scratch. Instead, it will be downloaded if necessary.
+
+## How It Works
+1. Retrieves current weather data for the specified city using the wttr.in API.
+2. Generates a response based on `suggestion_system_prompt.txt` and `suggestion_user_prompt.txt`, focusing on common recipes and ingredients specific to the chosen city.
+3. Computes the similarity between the suggested response and the data stored in chroma, returning the recipe with the highest similarity score.
+4. Formats the response using `formatting_data_system.txt` and `formatting_data_user.txt`, then outputs it to the user.
+
+## Retrieval Strategy
+The project uses the Retrieval-Augmented Generation (RAG) approach to select the recipe with the highest similarity score, ensuring that the recipe suggestions are relevant.
