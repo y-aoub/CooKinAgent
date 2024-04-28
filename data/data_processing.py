@@ -126,7 +126,7 @@ def get_processed_data_text(data, data_text_path=None):
         save_txt_file(data_text=processed_data_text, data_text_path=data_text_path)
     return processed_data_text
 
-    
+
 def process_data(processed_data_path):
     RECIPES_DATA_PATH, INTERACTIONS_DATA_PATH = get_data_paths(sub_dir="raw_data")
 
@@ -141,6 +141,8 @@ def process_data(processed_data_path):
 
     formatted_data = format_data(filtered_data)
 
-    processed_data_text = get_processed_data_text(formatted_data, data_text_path=processed_data_path)
-    
+    processed_data_text = get_processed_data_text(
+        formatted_data, data_text_path=processed_data_path
+    )
+
     return processed_data_text

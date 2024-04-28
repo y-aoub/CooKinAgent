@@ -4,6 +4,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate, ChatPromptTemplate
 
+
 def set_user_prompt(
     user_prompt,
     city,
@@ -49,10 +50,14 @@ def set_openai_llm(openai_api_key, temperature=0.7):
     )
     return llm
 
+
 def set_openai_embeddings(retry_max_seconds):
-    embeddings = OpenAIEmbeddings(model="text-embedding-3-large", retry_max_seconds=retry_max_seconds)
+    embeddings = OpenAIEmbeddings(
+        model="text-embedding-3-large", retry_max_seconds=retry_max_seconds
+    )
     return embeddings
-    
+
+
 def set_chain(llm):
     prompt = ChatPromptTemplate.from_messages(
         [("system", "{system_prompt}"), ("user", "{user_prompt}")]

@@ -48,7 +48,9 @@ def read_txt_file(data_text_path: str):
     return content
 
 
-def get_data_ids(recipes_data_id_key, intercations_data_id_key, chroma_data_id_key=None):
+def get_data_ids(
+    recipes_data_id_key, intercations_data_id_key, chroma_data_id_key=None
+):
     recipes_data_id = os.getenv(recipes_data_id_key)
     intercations_data_id = os.getenv(intercations_data_id_key)
     chroma_data_id = os.getenv(chroma_data_id_key)

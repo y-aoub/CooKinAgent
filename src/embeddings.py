@@ -7,9 +7,8 @@ def split_text(text):
 
 
 def build_chroma_data(splitted_text, chroma_data_path, embeddings):
-    Chroma.from_texts(
-        splitted_text, embeddings, persist_directory=chroma_data_path
-    )
+    Chroma.from_texts(splitted_text, embeddings, persist_directory=chroma_data_path)
+
 
 def similarity_search(chroma_data_path, openai_response, embeddings):
     db = Chroma(persist_directory=chroma_data_path, embedding_function=embeddings)
