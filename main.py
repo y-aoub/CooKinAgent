@@ -19,7 +19,7 @@ DOTENV_PATH = find_dotenv()
 load_dotenv(DOTENV_PATH)
 
 
-def build_vectorsctore(build_chroma):
+def build_vectorstore(build_chroma):
     embeddings = set_openai_embeddings(retry_max_seconds=40)
     RECIPES_DATA_ID, INTERACTIONS_DATA_ID, CHROMA_DATA_ID = get_data_ids(
         recipes_data_id_key="RECIPES_DATA_ID",

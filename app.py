@@ -1,6 +1,6 @@
 import streamlit as st
 from data.data_utils import read_txt_file
-from main import main, build_vectorsctore
+from main import main, build_vectorstore
 import argparse
 
 STYLE_PATH = "app_utils/style.txt"
@@ -38,7 +38,7 @@ def streamlit_app(build_chroma, style=STYLE):
     with st.spinner(
         "We're in the process of making the recipes database in the adpated format, which will be a one-time endeavor! It will take some time, but your patience will be rewarded with the best recipes! 😄"
     ):
-        build_vectorsctore(build_chroma=build_chroma)
+        build_vectorstore(build_chroma=build_chroma)
 
     city = st.text_input(
         "Enter the name of a city you're interested in!",
