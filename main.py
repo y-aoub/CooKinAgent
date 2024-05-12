@@ -1,4 +1,3 @@
-import os
 from dotenv import find_dotenv, load_dotenv
 from src.api_calls import (
     set_api_url,
