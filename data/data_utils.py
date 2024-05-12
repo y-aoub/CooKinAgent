@@ -8,6 +8,7 @@ DATA_DIR_PATH = pathlib.Path(__file__).parent
 def get_data_paths(sub_dir, data_dir_path=DATA_DIR_PATH):
 
     sub_dir_path = data_dir_path / sub_dir
+    sub_dir_path.mkdir(parents=True, exist_ok=True)
 
     if sub_dir == "raw_data":
         recipes_data_path = sub_dir_path / "recipes.csv"
@@ -28,7 +29,7 @@ def get_data_paths(sub_dir, data_dir_path=DATA_DIR_PATH):
 
     if sub_dir == "processed_data":
         processed_data_path = sub_dir_path / "processed_data.txt"
-        chroma_data_path = sub_dir_path / "chroma_data"
+        chroma_data_path = data_dir_path / "chroma_data"
         return str(processed_data_path), str(chroma_data_path)
 
 
