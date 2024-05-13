@@ -4,8 +4,8 @@ CooKinAgent is a project that retrieves recipes adapted to the current weather i
 ## Data
 The raw data used here comes from the following links:
 
-- [RAW_recipes.csv](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions/data?select=RAW_recipes.csv)
-- [RAW_interactions.csv](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions/data?select=RAW_interactions.csv)
+- Recipes data is available in CSV format and can be found [here](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions/data?select=RAW_recipes.csv).
+- Interactions data is also available in CSV format and can be found [here](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions/data?select=RAW_interactions.csv).
 
 ## Setup
 
@@ -33,6 +33,15 @@ Install the required Python packages using:
 ```
 pip install -r requirements.txt
 ```
+
+### Specifying OpenAI API Key
+Ensure that a valid OpenAI API Key is specified in your existing .env file located at the root of your project directory. The key should be stored in this format:
+```
+OPENAI_API_KEY=your-openai-api-key-here
+```
+Replace your-openai-api-key-here with your actual API key from OpenAI.
+
+If you do not have an OpenAI API key, you can obtain one by registering at https://platform.openai.com/signup.
 
 ## Project Structure
 CooKinAgent consists of two main scripts located within the CooKinAgent folder:
